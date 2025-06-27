@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Now Showing in Cinemas</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <section class="movie-list">
+    <h2>Now Showing in Cinemas</h2>
+    <div class="movies">
+      <div class="movie-card">
+        <img src="./assets/photos/Interstellar.jpg" alt="Interstellar">
+        <h3>Interstellar</h3>
+      </div>
+      <div class="movie-card">
+        <img src="./assets/photos/thuglife.jpg" alt="Thug Life">
+        <h3>Thug Life</h3>
+      </div>
+      <div class="movie-card">
+        <img src="./assets/photos/LionKing.webp" alt="Lion King">
+        <h3>Lion King</h3>
+      </div>
+      <div class="movie-card">
+        <img src="./assets/photos/godfather.jpg" alt="The Godfather">
+        <h3>The Godfather</h3>
+      </div>
+      <div class="movie-card">
+        <img src="./assets/photos/spiderman.jpg" alt="Spiderman">
+        <h3>Spiderman</h3>
+      </div>
+      <div class="movie-card">
+        <img src="./assets/photos/The Batman.jpg" alt="The Batman">
+        <h3>The Batman</h3>
+      </div>
+    </div>
+  </section>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const movieCards = document.querySelectorAll(".movie-card");
+
+    movieCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const movieName = card.querySelector("h3").innerText;
+        const seats = prompt(`How many seats would you like to book for "${movieName}"?`);
+
+        if (seats && !isNaN(seats) && Number(seats) > 0) {
+          alert(`✅ Booking successful!\n🎬 Movie: ${movieName}\n🎟️ Seats Booked: ${seats}`);
+        } else {
+          alert("⚠️ Please enter a valid number of seats.");
+        }
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>
